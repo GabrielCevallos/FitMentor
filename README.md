@@ -68,3 +68,70 @@ Repositorio del proyecto: "FitMentor".
 ## ☁️ RNF6: Confiabilidad y Recuperación
 - **RNF6.1:** La aplicación debe tener una disponibilidad del 99.9%, con backups automáticos diarios de datos.  
 - **RNF6.2:** Manejo de errores: mensajes amigables para fallos (por ejemplo: "No hay conexión") y recuperación automática de sesiones interrumpidas.  
+
+---
+
+### **1. Arquitectura seleccionada del proyecto**
+
+#### **Nivel 1: Contexto**
+
+*   **Actores principales**:
+    *   **Cliente final**: Interactúa con la aplicación móvil (React Native) y web (React).
+    *   **Administrador**: Gestiona contenido, usuarios y rutinas mediante un panel web.
+*   **Sistema central**: La **aplicación de fitness** que ofrece generación de rutinas y seguimiento de progreso.
+*   **Integraciones externas**:
+    *   Servicios de **IA** para generar rutinas personalizadas.
+    *   APIs externas (por ejemplo, de datos de salud o terceros servicios de autenticación).
+
+**Resumen del nivel de contexto:**
+La arquitectura es **cliente-servidor con servicios externos** y un backend centralizado que expone APIs REST para ambos clientes.
+
+#### **Nivel 2: Contenedor**
+
+*   **Frontend Web y Móvil**:
+    *   Ambos construidos con **React/React Native**.
+    *   Se comunican mediante **REST APIs** con el backend.
+*   **Backend**:
+    *   Basado en **Node.js con TypeScript**.
+    *   Exposición de **REST endpoints** para operaciones de clientes y administradores.
+*   **Servicio de IA**:
+    *   Implementado en **Python (FastAPI)**.
+    *   Encargado de lógica de generación de rutinas.
+*   **Base de datos**:
+    *   Se asume **PostgreSQL** para persistencia de usuarios, rutinas y métricas.
+*   **Comunicación**:
+    *   Frontend ↔ Backend: REST/JSON.
+    *   Backend ↔ Servicio IA: REST/JSON.
+    *   Backend ↔ Base de datos: SQL mediante un ORM (posiblemente TypeORM).
+
+**Resumen del nivel de contenedor:**
+La arquitectura es **modular**, basada en contenedores lógicos, con separación clara de responsabilidades: frontend, backend, IA y base de datos. Esto facilita escalabilidad, mantenimiento y pruebas independientes.
+
+### **2. Estándares de codificación para el proyecto**
+
+#### **Backend (Node.js + TypeScript)**
+
+*   Uso de **TypeScript estrictamente tipado** (`strict: true`) para evitar errores en tiempo de compilación y mejorar la robustez del código.
+*   Separación en **capas o módulos** para mantener una estructura clara y la separación de responsabilidades:
+    *   **Controladores**: Encargados de recibir las solicitudes (requests) y delegar la lógica de negocio.
+    *   **Servicios**: Contienen la lógica de negocio principal de la aplicación.
+    *   **Repositorios**: Gestionan el acceso y la manipulación de datos en la base de datos.
+*   Nombres **camelCase** para variables y funciones, y **PascalCase** para clases, interfaces y tipos.
+*   Manejo de **errores centralizado** utilizando middleware (con NestJS) para ofrecer respuestas consistentes y amigables.
+*   Uso de **promesas/async-await** para todas las operaciones asincrónicas, mejorando la legibilidad y el manejo de flujos de control.
+
+#### **Base de datos**
+
+*   Convenciones de nombres: **snake_case para tablas y columnas** (ej. `nombre_usuario`, `fecha_registro`).
+*   Llaves primarias: Utilizar `id` autoincrementales como identificador único para cada tabla.
+*   Implementación de índices en columnas críticas.
+
+#### **Buenas prácticas generales**
+
+*   Uso de **Git flow** para la gestión del control de versiones, incluyendo ramas `main` (producción), `develop` (desarrollo) y `feature branches` (para nuevas funcionalidades).
+*   Commits claros y atómicos, con mensajes descriptivos.
+*   Validación de datos en **frontend y backend** para garantizar la integridad y seguridad de la información.
+*   Logging centralizado y manejo de errores consistente en toda la aplicación para facilitar la depuración y el monitoreo.
+*   Implementación de **tests unitarios y de integración** desde el inicio del proyecto, con una cobertura de código mayor al 80% para los módulos críticos.
+
+---
