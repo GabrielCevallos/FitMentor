@@ -1,8 +1,39 @@
 # FitMentor
 
 <p align="center">
-  <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/14bd5c2d-11ce-490c-a4aa-069f42fc9db3" />
+  <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/14bd5c2d-11ce-490c-a4aa-069f42fc9db3" style="border-radius: 50%;" />
 </p>
+
+## 📋 Tabla de Contenidos
+
+- [📋 Requisitos Funcionales - Prioridad Alta](#-requisitos-funcionales---prioridad-alta)
+  - [🔑 RF1: Autenticación y Gestión de Usuarios](#-rf1-autenticación-y-gestión-de-usuarios)
+  - [🏋️ RF2: Gestión de Contenido de Entrenamiento](#️-rf2-gestión-de-contenido-de-entrenamiento-splits-rutinas-y-ejercicios)
+  - [👤 RF3: Vista de Usuarios - Seguimiento de Entrenamientos](#-rf3-vista-de-usuarios---seguimiento-de-entrenamientos)
+  - [📊 RF4: Estadísticas y Progreso](#-rf4-estadísticas-y-progreso)
+  - [🤖 RF5: Integración con Asistente Virtual de IA](#-rf5-integración-con-asistente-virtual-de-ia)
+  - [📱 RF6: Soporte Multiplataforma y Dispositivos](#-rf6-soporte-multiplataforma-y-dispositivos)
+  - [🔔 RF7: Funcionalidades Generales](#-rf7-funcionalidades-generales)
+- [🛠️ Requisitos No Funcionales - Prioridad Media](#️-requisitos-no-funcionales---prioridad-media)
+  - [⚡ RNF1: Rendimiento y Escalabilidad](#-rnf1-rendimiento-y-escalabilidad)
+  - [🔒 RNF2: Seguridad y Privacidad](#-rnf2-seguridad-y-privacidad)
+  - [🎨 RNF3: Usabilidad y Accesibilidad](#-rnf3-usabilidad-y-accesibilidad)
+  - [🧩 RNF4: Mantenibilidad y Desarrollo](#-rnf4-mantenibilidad-y-desarrollo)
+  - [🔗 RNF5: Integración y Compatibilidad](#-rnf5-integración-y-compatibilidad)
+  - [☁️ RNF6: Confiabilidad y Recuperación](#️-rnf6-confiabilidad-y-recuperación)
+- [🏗️ Arquitectura del Proyecto](#️-arquitectura-seleccionada-del-proyecto)
+  - [Nivel 1: Contexto](#nivel-1--contexto)
+  - [Nivel 2: Contenedor](#nivel-2-contenedor)
+- [✍️ Estándares de Codificación](#️-estándares-de-codificación-para-el-proyecto)
+  - [Backend (Node.js + TypeScript)](#backend-nodejs--typescript)
+  - [Base de Datos](#base-de-datos)
+  - [Buenas Prácticas Generales](#buenas-prácticas-generales)
+- [🌳 Flujo de Trabajo (GitFlow)](#-flujo-de-trabajo-gitflow)
+- [🚀 Pasos para Ejecutar](#-pasos-para-ejecutar)
+- [🧪 Comandos Útiles](#-comandos-útiles)
+- [🌐 Acceso a la Aplicación](#-acceso-a-la-aplicación)
+
+---
 
 # 📋 Requisitos Funcionales - Prioridad Alta
 
@@ -38,9 +69,7 @@
 ## 🔔 RF7: Funcionalidades Generales
 - **RF7.1:** La aplicación debe enviar notificaciones push para recordatorios de entrenamientos, progreso semanal o consejos de IA.  
 
-
 ---
-
 
 ## 🛠️ Requisitos No Funcionales - Prioridad Media
 
@@ -72,12 +101,11 @@
 
 ---
 
-### **1. 🏗️ Arquitectura seleccionada del proyecto**
+## 🏗️ Arquitectura seleccionada del proyecto
 
-#### **Nivel 1: Contexto**
+### Nivel 1: Contexto
 
-<img width="777" height="782" alt="ModeloC4Context drawio" src="https://github.com/user-attachments/assets/8e1271eb-f30d-46a8-bfb5-b052ac35ee34" />
-
+<img width="500" height="500" alt="ModeloC4Context drawio" src="https://github.com/user-attachments/assets/8e1271eb-f30d-46a8-bfb5-b052ac35ee34" />
 
 *   👥 **Actores principales**:
     *   **Usuario**: Interactúa con la aplicación móvil (React Native) y web (React).
@@ -89,9 +117,9 @@
 **📝 Resumen del nivel de contexto:**
 La arquitectura es **cliente-servidor con servicios externos** y un backend centralizado que expone APIs REST para ambos clientes.
 
-#### **Nivel 2: Contenedor**
+### Nivel 2: Contenedor
 
-<img width="1161" height="1051" alt="ModeloC4Contenedor drawio" src="https://github.com/user-attachments/assets/bc434b33-4297-40e1-9fe6-6c7d31a7f821" />
+<img width="500" height="500" alt="ModeloC4Contenedor drawio" src="https://github.com/user-attachments/assets/bc434b33-4297-40e1-9fe6-6c7d31a7f821" />
 
 *   📱💻 **Frontend Web y Móvil**:
     *   Ambos construidos con **React/React Native**.
@@ -112,9 +140,11 @@ La arquitectura es **cliente-servidor con servicios externos** y un backend cent
 **📝 Resumen del nivel de contenedor:**
 La arquitectura es **modular**, basada en contenedores lógicos, con separación clara de responsabilidades: frontend, backend, IA y base de datos. Esto facilita escalabilidad, mantenimiento y pruebas independientes.
 
-### **2. ✍️ Estándares de codificación para el proyecto**
+---
 
-#### **Backend (Node.js + TypeScript)**
+## ✍️ Estándares de codificación para el proyecto
+
+### Backend (Node.js + TypeScript)
 
 *   ✅ **Uso de TypeScript estrictamente tipado** (`strict: true`) para evitar errores en tiempo de compilación y mejorar la robustez del código.
 *   🧩 **Separación en capas o módulos** para mantener una estructura clara y la separación de responsabilidades:
@@ -125,13 +155,13 @@ La arquitectura es **modular**, basada en contenedores lógicos, con separación
 *   🚫 **Manejo de errores centralizado** utilizando middleware (con NestJS) para ofrecer respuestas consistentes y amigables.
 *   ⚡ **Uso de promesas/async-await** para todas las operaciones asincrónicas, mejorando la legibilidad y el manejo de flujos de control.
 
-#### **Base de datos**
+### Base de datos
 
 *   🐍 **Convenciones de nombres: snake_case para tablas y columnas** (ej. `nombre_usuario`, `fecha_registro`).
 *   🔑 **Llaves primarias**: Utilizar `id` autoincrementales como identificador único para cada tabla.
 *   📊 **Implementación de índices** en columnas críticas.
 
-#### **Buenas prácticas generales**
+### Buenas prácticas generales
 
 *   🌳 **Uso de Git flow** para la gestión del control de versiones, incluyendo ramas `main` (producción), `develop` (desarrollo) y `feature branches` (para nuevas funcionalidades).
 *   💬 **Commits claros y atómicos**, con mensajes descriptivos.
@@ -139,13 +169,13 @@ La arquitectura es **modular**, basada en contenedores lógicos, con separación
 *   🪵 **Logging centralizado y manejo de errores** consistente en toda la aplicación para facilitar la depuración y el monitoreo.
 *   🧪 **Implementación de tests unitarios y de integración** desde el inicio del proyecto, con una cobertura de código mayor al 80% para los módulos críticos.
 
+---
+
 # 🌳 Flujo de Trabajo (GitFlow)
 
 ## 🔹 Ramas Principales
 - **main / master** → Código en producción (releases estables).  
 - **develop** → Integración de características nuevas (próximo release).  
-
----
 
 ## 🔹 Ramas Temporales
 - **feature/** → Para nuevas funcionalidades.  
@@ -154,8 +184,6 @@ La arquitectura es **modular**, basada en contenedores lógicos, con separación
   *(se crean desde `develop` → se mergean a `main` y `develop`)*  
 - **hotfix/** → Correcciones urgentes en producción.  
   *(se crean desde `main` → se mergean a `main` y `develop`)*  
-
----
 
 ## 🔹 Flujo Básico de Trabajo
 1. 🚧 Desarrolla en `feature/nueva-funcion` partiendo de `develop`.  
@@ -170,41 +198,52 @@ La arquitectura es **modular**, basada en contenedores lógicos, con separación
 
 ### 1. Clonar el repositorio
 ```bash
-git clone <https://github.com/GabrielCevallos/FitMentor>
+git clone https://github.com/GabrielCevallos/FitMentor
 ```
+
 ### 2. Entrar al proyecto
 ```bash
-bashcd <FitMentor>
+cd FitMentor
 ```
+
 ### 3. Instalar dependencias
 ```bash
-bashnpm install
+npm install
 ```
+
 ### 4. Ejecutar en modo desarrollo
 ```bash
-bashnpm run start:dev
+npm run start:dev
 ```
+
 ### 5. Ejecutar en modo producción
 ```bash
-bashnpm run start:prod
+npm run start:prod
 ```
-###🧪 Comandos Útiles
-🧹 Lint
+
+---
+
+## 🧪 Comandos Útiles
+
+### 🧹 Lint
 ```bash
-bashnpm run lint
+npm run lint
 ```
-🧱 Compilar
+
+### 🧱 Compilar
 ```bash
-bashnpm run build
+npm run build
 ```
-🧾 Tests
+
+### 🧾 Tests
 ```bash
-bashnpm run test
+npm run test
 ```
-🌐 Acceso a la Aplicación
-👉 http://localhost:3000
 
-⚠️Nota: Si el puerto cambia, revisa el archivo src/main.ts o .env
+---
 
+## 🌐 Acceso a la Aplicación
 
+👉 **http://localhost:3000**
 
+> ⚠️ **Nota:** Si el puerto cambia, revisa el archivo `src/main.ts` o `.env`
