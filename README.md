@@ -79,8 +79,7 @@ Repositorio del proyecto: "FitMentor".
 
 
 *   **Actores principales**:
-    *   **Cliente final**: Interactúa con la aplicación móvil (React Native) y web (React).
-    *   **Administrador**: Gestiona contenido, usuarios y rutinas mediante un panel web.
+    *   **Usuario**: Interactúa con la aplicación móvil (React Native) y web (React).
 *   **Sistema central**: La **aplicación de fitness** que ofrece generación de rutinas y seguimiento de progreso.
 *   **Integraciones externas**:
     *   Servicios de **IA** para generar rutinas personalizadas.
