@@ -1,7 +1,8 @@
 # FitMentor
-Repositorio del proyecto: "FitMentor".
 
-<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/14bd5c2d-11ce-490c-a4aa-069f42fc9db3" />
+<p align="center">
+  <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/14bd5c2d-11ce-490c-a4aa-069f42fc9db3" />
+</p>
 
 # 📋 Requisitos Funcionales - Prioridad Alta
 
@@ -138,4 +139,72 @@ La arquitectura es **modular**, basada en contenedores lógicos, con separación
 *   🪵 **Logging centralizado y manejo de errores** consistente en toda la aplicación para facilitar la depuración y el monitoreo.
 *   🧪 **Implementación de tests unitarios y de integración** desde el inicio del proyecto, con una cobertura de código mayor al 80% para los módulos críticos.
 
+# 🌳 Flujo de Trabajo (GitFlow)
+
+## 🔹 Ramas Principales
+- **main / master** → Código en producción (releases estables).  
+- **develop** → Integración de características nuevas (próximo release).  
+
 ---
+
+## 🔹 Ramas Temporales
+- **feature/** → Para nuevas funcionalidades.  
+  *(se crean desde `develop` → se mergean de nuevo a `develop`)*  
+- **release/** → Preparación de releases.  
+  *(se crean desde `develop` → se mergean a `main` y `develop`)*  
+- **hotfix/** → Correcciones urgentes en producción.  
+  *(se crean desde `main` → se mergean a `main` y `develop`)*  
+
+---
+
+## 🔹 Flujo Básico de Trabajo
+1. 🚧 Desarrolla en `feature/nueva-funcion` partiendo de `develop`.  
+2. 🔀 Haz **merge a `develop`** cuando la feature esté lista.  
+3. 🧪 Crea `release/v1.0` desde `develop` para pruebas finales.  
+4. ✅ Haz **merge a `main`**, crea un **tag** (ej. `v1.0`) y mergea de vuelta a `develop`.  
+5. 🐞 Para bugs críticos: crea rama `hotfix/` desde `main`, y mergea a **main** y **develop**.  
+
+---
+
+## 🚀 Pasos para Ejecutar
+
+### 1. Clonar el repositorio
+```bash
+git clone <https://github.com/GabrielCevallos/FitMentor>
+```
+### 2. Entrar al proyecto
+```bash
+bashcd <FitMentor>
+```
+### 3. Instalar dependencias
+```bash
+bashnpm install
+```
+### 4. Ejecutar en modo desarrollo
+```bash
+bashnpm run start:dev
+```
+### 5. Ejecutar en modo producción
+```bash
+bashnpm run start:prod
+```
+###🧪 Comandos Útiles
+🧹 Lint
+```bash
+bashnpm run lint
+```
+🧱 Compilar
+```bash
+bashnpm run build
+```
+🧾 Tests
+```bash
+bashnpm run test
+```
+🌐 Acceso a la Aplicación
+👉 http://localhost:3000
+
+⚠️Nota: Si el puerto cambia, revisa el archivo src/main.ts o .env
+
+
+
