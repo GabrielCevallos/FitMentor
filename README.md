@@ -75,6 +75,9 @@ Repositorio del proyecto: "FitMentor".
 
 #### **Nivel 1: Contexto**
 
+<img width="777" height="782" alt="ModeloC4Context drawio" src="https://github.com/user-attachments/assets/8e1271eb-f30d-46a8-bfb5-b052ac35ee34" />
+
+
 *   **Actores principales**:
     *   **Cliente final**: Interactúa con la aplicación móvil (React Native) y web (React).
     *   **Administrador**: Gestiona contenido, usuarios y rutinas mediante un panel web.
@@ -87,6 +90,9 @@ Repositorio del proyecto: "FitMentor".
 La arquitectura es **cliente-servidor con servicios externos** y un backend centralizado que expone APIs REST para ambos clientes.
 
 #### **Nivel 2: Contenedor**
+
+<img width="1161" height="1051" alt="ModeloC4Contenedor drawio" src="https://github.com/user-attachments/assets/49edba54-40a3-4a50-bf34-994fdea1e09d" />
+
 
 *   **Frontend Web y Móvil**:
     *   Ambos construidos con **React/React Native**.
