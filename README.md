@@ -71,7 +71,7 @@ Repositorio del proyecto: "FitMentor".
 
 ---
 
-### **1. Arquitectura seleccionada del proyecto**
+### **1. 🏗️ Arquitectura seleccionada del proyecto**
 
 #### **Nivel 1: Contexto**
 
@@ -88,7 +88,9 @@ Repositorio del proyecto: "FitMentor".
 **📝 Resumen del nivel de contexto:**
 La arquitectura es **cliente-servidor con servicios externos** y un backend centralizado que expone APIs REST para ambos clientes.
 
+#### **Nivel 2: Contenedor**
 
+<img width="1161" height="1051" alt="ModeloC4Contenedor drawio" src="https://github.com/user-attachments/assets/bc434b33-4297-40e1-9fe6-6c7d31a7f821" />
 
 *   📱💻 **Frontend Web y Móvil**:
     *   Ambos construidos con **React/React Native**.
