@@ -35,7 +35,7 @@ export class PersonsService {
       throw new NotFoundException('Person was not Found');
     }
     await this.personsRepository.save({
-      ...PersonSave,
+      ...person,
       ...personUpdate,
       updatedAt: new Date(),
     });
